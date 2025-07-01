@@ -33,6 +33,7 @@ async function main() {
 }
 
 async function preMigrationChecks() {
+  const [deployer] = await ethers.getSigners();
   const deploymentsDir = path.join(__dirname, "..", "deployments");
   const deploymentFile = path.join(deploymentsDir, `${network.name}.json`);
 
